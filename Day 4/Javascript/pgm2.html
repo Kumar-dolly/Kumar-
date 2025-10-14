@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Function Example</title>
+</head>
+<body>
+    <h2>Add Function Example</h2>
+
+    <button onclick="showSum()">Add 5 + 3</button>
+    <p id="sumResult"></p>
+
+    <script>
+        function add(a,b) {
+            return a + b;
+        }
+
+        function showSum() {
+            let sum = add(5,3);
+            document.getElementById("sumResult").innerText="sum:" +sum;
+        }
+    </script>
+</body>
+</html>
