@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5 p-4 bg-white shadow rounded w-50">
+    <h3 class="text-center mb-4">Simple Calculator</h3>
+    <div class="mb-3">
+        <input type="number" id="num1" class="form-control" placeholder="Enter first number">
+    </div>
+    <div class="mb-3">
+        <label for="number">second number</label>
+        <input type="number" id="num2" class="form-control" placeholder="Enter second number">
+    </div>
+
+<div class="d-flex justify-content-between">
+    <button class="btn btn-success" onclick="calculate('+')">+</button>
+    <button class="btn btn-danger" onclick="calculate('-')">-</button>
+    <button class="btn btn-warning" onclick="calculate('*')">*</button>
+    <button class="btn btn-info" onclick="calculate('/')">/</button>
+</div>
+
+<h5 class="mt-4 text-center" id="result"></h5>
+</div>
+    <script>
+function calculate(operator) {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    let result;
+
+    if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById('result').innerText = "Please enter both numbers.";
+        return;
+    }
+
+    switch(operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = num2 !== 0 ? (num1 / num2) : "Cannot divide by zero";
+            break;
+    }
+
+    document.getElementById('result').innerText = `Result: ${result}`;
+}
+</script>
+</body>
+</html>
