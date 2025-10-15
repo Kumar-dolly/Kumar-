@@ -1,0 +1,16 @@
+<h3>Swap Two Numbers</h3>
+<div class="container">
+    <input type="number" id="a" class="form-control" placeholder="A">
+    <input type="number" id="b" class="form-control mt-2" placeholder="B">
+    <button class="btn btn-primary mt-2" onclick="swap()">Swap</button>
+    <input type="text" id="result" class="form-control mt-2" placeholder="After Swap">
+</div>
+
+<script>
+function swap() {
+    let a = +document.getElementById("a").value;
+    let b = +document.getElementById("b").value;
+    [a,b] = [b,a];
+    document.getElementById("result").value = `A = ${a}, B = ${b}`;
+}
+</script>
